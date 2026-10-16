@@ -1,0 +1,23 @@
+{
+  "name": "agricultural-tools-app",
+  "private": true,
+  "version": "1.0.0",
+  "workspaces": [
+    "apps/*",
+    "packages/*"
+  ],
+  "scripts": {
+    "dev": "concurrently -n api,web -c green,blue \"npm run dev -w @agri/api\" \"npm run dev -w @agri/web\"",
+    "build": "npm run build -w @agri/api && npm run build -w @agri/web",
+    "test": "npm run test -w @agri/api && npm run test -w @agri/web",
+    "db:migrate": "npm run db:migrate -w @agri/api",
+    "db:seed": "npm run db:seed -w @agri/api",
+    "lint": "npm run lint -w @agri/api && npm run lint -w @agri/web"
+  },
+  "devDependencies": {
+    "concurrently": "^9.1.2"
+  },
+  "engines": {
+    "node": ">=20"
+  }
+}
