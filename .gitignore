@@ -12,3 +12,6 @@ test-results/
 apps/api/uploads/
 *.tsbuildinfo
 .vite/
+apps/web-react-backup/
+.angular/
+apps/web/.angular/
